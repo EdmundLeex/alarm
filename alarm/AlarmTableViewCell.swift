@@ -9,9 +9,9 @@
 import UIKit
 
 class AlarmTableViewCell: UITableViewCell {
-
     
     @IBOutlet weak var alarmNameLabel: UILabel!
+    @IBOutlet weak var alarmTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,6 +10,7 @@ import UIKit
 
 class AlarmsTableViewController: UITableViewController {
     
+    let dateFormatter = NSDateFormatter()
     var alarms: NSMutableArray = []
 
     override func viewDidLoad() {
@@ -46,6 +47,7 @@ class AlarmsTableViewController: UITableViewController {
         print(alarms)
         let alarm = alarms[indexPath.row] as! Alarm
         cell.alarmNameLabel.text = alarm.name!
+        cell.alarmTimeLabel.text = dateFormatter.stringFromDate(alarm.alarmTime!)
 
         return cell
     }
@@ -61,7 +63,6 @@ class AlarmsTableViewController: UITableViewController {
         for alarmPayload in alarmsPayload {
             let name = alarmPayload["name"] as? String ?? "Alarm"
             let timeStr = alarmPayload["alarm_time"] as! String
-            let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "HH:mm z"
             
             if let alarmTime = dateFormatter.dateFromString(timeStr) {
