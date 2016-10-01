@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8801D9441DA0794400D0E065 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8801D9431DA0794400D0E065 /* FBSDKCoreKit.framework */; };
+		8801D94F1DA07AE700D0E065 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8801D94E1DA07AE700D0E065 /* FBSDKLoginKit.framework */; };
+		8801D9511DA07BB700D0E065 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8801D9501DA07BB700D0E065 /* LoginViewController.swift */; };
 		887FFB471D8477170034B9E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887FFB3A1D84770B0034B9E9 /* Alamofire.framework */; };
 		887FFB481D8477170034B9E9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887FFB3A1D84770B0034B9E9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8892EEA81D9B84C600EE9B98 /* AlarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8892EEA71D9B84C600EE9B98 /* AlarmsTableViewController.swift */; };
@@ -96,6 +99,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8801D9431DA0794400D0E065 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		8801D94E1DA07AE700D0E065 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		8801D9501DA07BB700D0E065 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8801D9521DA07E0C00D0E065 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		887FFB2E1D84770A0034B9E9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		8892EEA71D9B84C600EE9B98 /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
 		88C0B4781D9B7F4C009DE237 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +125,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				887FFB471D8477170034B9E9 /* Alamofire.framework in Frameworks */,
+				8801D9441DA0794400D0E065 /* FBSDKCoreKit.framework in Frameworks */,
+				8801D94F1DA07AE700D0E065 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +150,8 @@
 		88C2BCCC1D6D66C400F08D77 = {
 			isa = PBXGroup;
 			children = (
+				8801D94E1DA07AE700D0E065 /* FBSDKLoginKit.framework */,
+				8801D9431DA0794400D0E065 /* FBSDKCoreKit.framework */,
 				88C2BCD71D6D66C400F08D77 /* alarm */,
 				88C2BCD61D6D66C400F08D77 /* Products */,
 				887FFB2E1D84770A0034B9E9 /* Alamofire.xcodeproj */,
@@ -158,9 +169,11 @@
 		88C2BCD71D6D66C400F08D77 /* alarm */ = {
 			isa = PBXGroup;
 			children = (
+				8801D9521DA07E0C00D0E065 /* Bridging-Header.h */,
 				88C2BCD81D6D66C400F08D77 /* AppDelegate.swift */,
 				88C2BCDA1D6D66C400F08D77 /* AlarmFormViewController.swift */,
 				88C2BCDC1D6D66C400F08D77 /* Main.storyboard */,
+				8801D9501DA07BB700D0E065 /* LoginViewController.swift */,
 				8892EEA71D9B84C600EE9B98 /* AlarmsTableViewController.swift */,
 				88F6C4221D925D9400FC6D02 /* MainViewController.swift */,
 				88F6C42B1D92616F00FC6D02 /* AlarmsViewController.swift */,
@@ -305,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8801D9511DA07BB700D0E065 /* LoginViewController.swift in Sources */,
 				88F6C42C1D92616F00FC6D02 /* AlarmsViewController.swift in Sources */,
 				8892EEA81D9B84C600EE9B98 /* AlarmsTableViewController.swift in Sources */,
 				88F6C4231D925D9400FC6D02 /* MainViewController.swift in Sources */,
@@ -436,11 +450,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDKs-iOS-4.16.0";
 				INFOPLIST_FILE = alarm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.edmundleex.www.alarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "alarm/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -449,11 +465,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDKs-iOS-4.16.0";
 				INFOPLIST_FILE = alarm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.edmundleex.www.alarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "alarm/Bridging-Header.h";
 			};
 			name = Release;
 		};
