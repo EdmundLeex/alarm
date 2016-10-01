@@ -118,26 +118,26 @@
         <scene sceneID="nuA-F3-qnL">
             <objects>
                 <tableViewController id="vaD-dP-GhO" customClass="AlarmsTableViewController" customModule="alarm" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1O4-tn-VZ9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="1O4-tn-VZ9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmTableViewCell" id="xpn-ZZ-nln" customClass="AlarmTableViewCell" customModule="alarm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xpn-ZZ-nln" id="UjX-LG-0CP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM2-M9-1AP">
-                                            <rect key="frame" x="8" y="11" width="288" height="21"/>
+                                            <rect key="frame" x="8" y="19" width="288" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSC-yB-m65">
-                                            <rect key="frame" x="304" y="11" width="288" height="21"/>
+                                            <rect key="frame" x="304" y="19" width="288" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                                         <constraint firstItem="YSC-yB-m65" firstAttribute="leading" secondItem="TM2-M9-1AP" secondAttribute="trailing" constant="8" symbolic="YES" id="0bL-C6-iPY"/>
                                         <constraint firstItem="TM2-M9-1AP" firstAttribute="leading" secondItem="UjX-LG-0CP" secondAttribute="leadingMargin" id="6XE-f7-41V"/>
                                         <constraint firstItem="YSC-yB-m65" firstAttribute="width" secondItem="TM2-M9-1AP" secondAttribute="width" id="CKE-1S-VnN"/>
-                                        <constraint firstItem="YSC-yB-m65" firstAttribute="top" secondItem="UjX-LG-0CP" secondAttribute="topMargin" constant="3" id="EIr-ig-gq1"/>
+                                        <constraint firstItem="YSC-yB-m65" firstAttribute="top" secondItem="UjX-LG-0CP" secondAttribute="topMargin" constant="11" id="EIr-ig-gq1"/>
                                         <constraint firstItem="TM2-M9-1AP" firstAttribute="baseline" secondItem="YSC-yB-m65" secondAttribute="baseline" id="Hxe-8b-HQD"/>
                                         <constraint firstItem="YSC-yB-m65" firstAttribute="trailing" secondItem="UjX-LG-0CP" secondAttribute="trailingMargin" id="oPe-lC-Oct"/>
                                     </constraints>

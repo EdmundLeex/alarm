@@ -33,30 +33,8 @@ class AlarmFormViewController: UIViewController {
         
         let alarm = Alarm(alarmName: alarmNameTF.text!, time: timePicker.date)
         
-        Api.createAlarm(alarm)
-        
-        let params : [String : AnyObject] = [
-            "alarm": [
-                "alarm_time": timePicker.date,
-                "name": alarmNameTF.text! as NSString
-            ] as Dictionary
-        ]
-
-        Alamofire.request(
-            .POST,
-            "https://332a27d3.ngrok.io/alarms",
-            parameters: params
-        ).responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
+        Api.createAlarm(alarm) {
             self.navigationController?.popViewControllerAnimated(true)
-            
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
         }
     }
 }

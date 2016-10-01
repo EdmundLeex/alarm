@@ -18,14 +18,13 @@ class Api {
         Alamofire.request(
             .GET,
             "\(baseUrl)/alarms"
-            ).responseJSON { response in
-                let alarms = response.result.value
-                fn(alarms as! NSArray)
-//                print(alarms)
+        ).responseJSON { response in
+            let alarms = response.result.value
+            fn(alarms as! NSArray)
         }
     }
     
-    class func createAlarm(alarm: Alarm) {
+    class func createAlarm(alarm: Alarm, closure: () -> Void) {
         let params = [
             "alarm": alarm.toDict()
         ]
@@ -42,8 +41,9 @@ class Api {
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
             }
+            
+            closure()
         }
-
     }
     
     func editAlarm(alarm: Alarm) {
