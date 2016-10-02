@@ -10,21 +10,18 @@ import UIKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-
+    let fbLoginBtn : FBSDKLoginButton = FBSDKLoginButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            print("Already logged in")
+            showFacebookLoginBtn()
             // User is already logged in, do work such as go to next view controller.
         }
-        else
-        {
-            let loginView : FBSDKLoginButton = FBSDKLoginButton()
-            self.view.addSubview(loginView)
-            loginView.center = self.view.center
-            loginView.readPermissions = ["public_profile", "email", "user_friends"]
-            loginView.delegate = self
+        else {
+            showFacebookLoginBtn()
         }
     }
 
@@ -44,13 +41,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         else if result.isCancelled {
             // Handle cancellations
+            print("canceled")
         }
         else {
             // If you ask for multiple permissions at once, you
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
+                
                 // Do work
+                loginUser()
+                returnUserData()
             }
         }
     }
@@ -59,9 +60,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         print("User Logged Out")
     }
     
-    func returnUserData()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+    func returnUserData() {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, name, id"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -71,15 +71,47 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             else
             {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
+                print(result)
+                print(FBSDKAccessToken.currentAccessToken().tokenString)
+                print(FBSDKAccessToken.currentAccessToken().expirationDate)
+//                let userName : String = result.valueForKey("name") as! String
+//                let userEmail : String = result.valueForKey("email") as! String
+//                let userId : String = result.valueForKey("id") as! String
             }
         })
     }
     
+    func loginUser() {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, name, id"])
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            if ((error) != nil) {
+                // Process error
+                print("Error: \(error)")
+            }
+            else {
+                let userName = result.valueForKey("name") as! String
+                let userEmail = result.valueForKey("email") as! String
+                let userId = result.valueForKey("id") as! String
+                let userToken = FBSDKAccessToken.currentAccessToken().tokenString
+                let user = User(name: userName, email: userEmail, uid: userId, accessToken: userToken)
+                Api.oauthUser(user, completion: self.goToMainView)
+            }
+        })
+    }
+    
+    func showFacebookLoginBtn() {
+        self.view.addSubview(fbLoginBtn)
+        fbLoginBtn.center = self.view.center
+        fbLoginBtn.readPermissions = ["public_profile", "email", "user_friends"]
+        fbLoginBtn.delegate = self
+    }
+    
+    func goToMainView() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("navigationController") as! UINavigationController
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+    }
 
     /*
     // MARK: - Navigation

@@ -10,6 +10,7 @@
 		8801D9441DA0794400D0E065 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8801D9431DA0794400D0E065 /* FBSDKCoreKit.framework */; };
 		8801D94F1DA07AE700D0E065 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8801D94E1DA07AE700D0E065 /* FBSDKLoginKit.framework */; };
 		8801D9511DA07BB700D0E065 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8801D9501DA07BB700D0E065 /* LoginViewController.swift */; };
+		8801D9541DA0898A00D0E065 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8801D9531DA0898A00D0E065 /* User.swift */; };
 		887FFB471D8477170034B9E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887FFB3A1D84770B0034B9E9 /* Alamofire.framework */; };
 		887FFB481D8477170034B9E9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887FFB3A1D84770B0034B9E9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8892EEA81D9B84C600EE9B98 /* AlarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8892EEA71D9B84C600EE9B98 /* AlarmsTableViewController.swift */; };
@@ -103,6 +104,7 @@
 		8801D94E1DA07AE700D0E065 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4.16.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		8801D9501DA07BB700D0E065 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8801D9521DA07E0C00D0E065 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8801D9531DA0898A00D0E065 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		887FFB2E1D84770A0034B9E9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		8892EEA71D9B84C600EE9B98 /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
 		88C0B4781D9B7F4C009DE237 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		88C2BCD71D6D66C400F08D77 /* alarm */ = {
 			isa = PBXGroup;
 			children = (
+				8801D9531DA0898A00D0E065 /* User.swift */,
 				8801D9521DA07E0C00D0E065 /* Bridging-Header.h */,
 				88C2BCD81D6D66C400F08D77 /* AppDelegate.swift */,
 				88C2BCDA1D6D66C400F08D77 /* AlarmFormViewController.swift */,
@@ -326,6 +329,7 @@
 				88F6C42E1D92621600FC6D02 /* Api.swift in Sources */,
 				88C2BCD91D6D66C400F08D77 /* AppDelegate.swift in Sources */,
 				88C0B4791D9B7F4C009DE237 /* AlarmTableViewCell.swift in Sources */,
+				8801D9541DA0898A00D0E065 /* User.swift in Sources */,
 				88F6C4301D9262BD00FC6D02 /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

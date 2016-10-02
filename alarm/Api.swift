@@ -24,7 +24,7 @@ class Api {
         }
     }
     
-    class func createAlarm(alarm: Alarm, closure: () -> Void) {
+    class func createAlarm(alarm: Alarm, fn: () -> Void) {
         let params = [
             "alarm": alarm.toDict()
         ]
@@ -42,7 +42,7 @@ class Api {
                 print("JSON: \(JSON)")
             }
             
-            closure()
+            fn()
         }
     }
     
@@ -54,5 +54,19 @@ class Api {
         
     }
     
-    
+    class func oauthUser(user: User, completion fn: () -> Void) {
+        let params = [
+            "user": user.toDict()
+        ]
+        Alamofire.request(
+            .POST,
+            "\(baseUrl)/api/auth/facebook",
+            parameters: params
+        ).responseJSON { response in
+            let oauthToken = response.result.value!["oauth_token"]
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(oauthToken, forKey: "oauthToken")
+            fn()
+        }
+    }
 }
