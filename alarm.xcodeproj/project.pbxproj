@@ -21,7 +21,6 @@
 		88C2BCE01D6D66C400F08D77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C2BCDF1D6D66C400F08D77 /* Assets.xcassets */; };
 		88C2BCE31D6D66C400F08D77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C2BCE11D6D66C400F08D77 /* LaunchScreen.storyboard */; };
 		88F6C4231D925D9400FC6D02 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F6C4221D925D9400FC6D02 /* MainViewController.swift */; };
-		88F6C42C1D92616F00FC6D02 /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F6C42B1D92616F00FC6D02 /* AlarmsViewController.swift */; };
 		88F6C42E1D92621600FC6D02 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F6C42D1D92621600FC6D02 /* Api.swift */; };
 		88F6C4301D9262BD00FC6D02 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F6C42F1D9262BD00FC6D02 /* Alarm.swift */; };
 /* End PBXBuildFile section */
@@ -116,7 +115,6 @@
 		88C2BCE21D6D66C400F08D77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88C2BCE41D6D66C400F08D77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88F6C4221D925D9400FC6D02 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		88F6C42B1D92616F00FC6D02 /* AlarmsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
 		88F6C42D1D92621600FC6D02 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		88F6C42F1D9262BD00FC6D02 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +133,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8801D9551DA1DA1000D0E065 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				8801D9531DA0898A00D0E065 /* User.swift */,
+				88F6C42F1D9262BD00FC6D02 /* Alarm.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		8801D9561DA1DA2200D0E065 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8801D9571DA1DA7C00D0E065 /* alarms */,
+				88F6C4221D925D9400FC6D02 /* MainViewController.swift */,
+				8801D9501DA07BB700D0E065 /* LoginViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		8801D9571DA1DA7C00D0E065 /* alarms */ = {
+			isa = PBXGroup;
+			children = (
+				88C0B4781D9B7F4C009DE237 /* AlarmTableViewCell.swift */,
+				8892EEA71D9B84C600EE9B98 /* AlarmsTableViewController.swift */,
+				88C2BCDA1D6D66C400F08D77 /* AlarmFormViewController.swift */,
+			);
+			name = alarms;
+			sourceTree = "<group>";
+		};
 		887FFB2F1D84770A0034B9E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,18 +198,12 @@
 		88C2BCD71D6D66C400F08D77 /* alarm */ = {
 			isa = PBXGroup;
 			children = (
-				8801D9531DA0898A00D0E065 /* User.swift */,
+				8801D9561DA1DA2200D0E065 /* controllers */,
+				8801D9551DA1DA1000D0E065 /* models */,
 				8801D9521DA07E0C00D0E065 /* Bridging-Header.h */,
 				88C2BCD81D6D66C400F08D77 /* AppDelegate.swift */,
-				88C2BCDA1D6D66C400F08D77 /* AlarmFormViewController.swift */,
 				88C2BCDC1D6D66C400F08D77 /* Main.storyboard */,
-				8801D9501DA07BB700D0E065 /* LoginViewController.swift */,
-				8892EEA71D9B84C600EE9B98 /* AlarmsTableViewController.swift */,
-				88F6C4221D925D9400FC6D02 /* MainViewController.swift */,
-				88F6C42B1D92616F00FC6D02 /* AlarmsViewController.swift */,
-				88C0B4781D9B7F4C009DE237 /* AlarmTableViewCell.swift */,
 				88F6C42D1D92621600FC6D02 /* Api.swift */,
-				88F6C42F1D9262BD00FC6D02 /* Alarm.swift */,
 				88C2BCDF1D6D66C400F08D77 /* Assets.xcassets */,
 				88C2BCE11D6D66C400F08D77 /* LaunchScreen.storyboard */,
 				88C2BCE41D6D66C400F08D77 /* Info.plist */,
@@ -322,7 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8801D9511DA07BB700D0E065 /* LoginViewController.swift in Sources */,
-				88F6C42C1D92616F00FC6D02 /* AlarmsViewController.swift in Sources */,
 				8892EEA81D9B84C600EE9B98 /* AlarmsTableViewController.swift in Sources */,
 				88F6C4231D925D9400FC6D02 /* MainViewController.swift in Sources */,
 				88C2BCDB1D6D66C400F08D77 /* AlarmFormViewController.swift in Sources */,
