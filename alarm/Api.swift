@@ -25,19 +25,19 @@ class Api {
     }
     
     class func createAlarm(alarm: Alarm, fn: () -> Void) {
-        let params = [
-            "alarm": alarm.toDict()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let userToken = defaults.valueForKey("oauthToken") as? String
+        
+        let params: [String: AnyObject] = [
+            "alarm": alarm.toDict(),
+            "oauth_token": userToken!
         ]
+
         Alamofire.request(
             .POST,
             "\(baseUrl)/alarms",
             parameters: params
         ).responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
             }
@@ -66,6 +66,7 @@ class Api {
             let oauthToken = response.result.value!["oauth_token"]
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setValue(oauthToken, forKey: "oauthToken")
+            print(oauthToken)
             fn()
         }
     }

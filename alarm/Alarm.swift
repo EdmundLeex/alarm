@@ -11,7 +11,6 @@ import Foundation
 class Alarm {
     var name: String?
     var alarmTime: NSDate?
-//    var params: [String: AnyObject]?
     
     init(alarmName: String, time: NSDate) {
         self.name = alarmName
